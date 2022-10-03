@@ -22,7 +22,7 @@ io.on('connection', socket => {
         socket.join(room);
 
         //Welcome current user
-        socket.emit('message',formatMessage('ChatBot','Welcome to AbD Chat App!'));
+        socket.emit('message',formatMessage('ChatBot','Hearty Welcome from Abhilash!!'));
 
         //broatcast when a user connects
         socket.broadcast.to(room).emit('message', formatMessage('Abd ChatBot',`${username} has joined the room!`));

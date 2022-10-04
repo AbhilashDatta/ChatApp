@@ -22,7 +22,7 @@ io.on('connection', socket => {
         socket.join(room);
 
         //Welcome current user
-        socket.emit('message',formatMessage('ChatBot','Welcome to AbD Chat App!'));
+        socket.emit('message',formatMessage('ChatBot','Hearty Welcome from Abhilash!!'));
 
         //broatcast when a user connects
         socket.broadcast.to(room).emit('message', formatMessage('Abd ChatBot',`${username} has joined the room!`));
@@ -58,6 +58,6 @@ io.on('connection', socket => {
 
 });
 
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

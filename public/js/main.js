@@ -48,13 +48,18 @@ chatForm.addEventListener('submit', (e)=>{
 
 // Output message to DOM
 function outputMessage(message){
-    const div = document.createElement('div');
-    div.classList.add('message');
-    div.innerHTML = `<p class="meta">${message.username} <span>${message.time}</span></p>
-    <p class="text">
-        ${message.text}
-    </p>`;
-    document.querySelector('.chat-messages').appendChild(div);
+    let res = message.text.trim();
+
+    if(res){
+        const div = document.createElement('div');
+        div.classList.add('message');
+        div.style.overflowWrap = 'break-word';
+        div.innerHTML = `<p class="meta">${message.username} <span>${message.time}</span></p>
+        <p class="text">
+            ${res}
+        </p>`;
+        document.querySelector('.chat-messages').appendChild(div);
+    }
 }
 
 // Add roomName to DOM
